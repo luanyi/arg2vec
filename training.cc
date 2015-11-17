@@ -221,8 +221,8 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
 	for (unsigned m = 0; m < conv.size(); m++){
 	  ComputationGraph cg;
 	  Sent sent = conv[m];
-	  lm.BuildGraphSent(sent, unigram, nneg, cg);
-	  // lm.BuildGraph(sent, unigram, cg);
+	  // lm.BuildGraphSent(sent, unigram, nneg, cg);
+	  lm.BuildGraph(sent, unigram, cg);
 	  dloss += as_scalar(cg.forward());
 	}
 	for (auto& sent : conv) dwords += sent.size() - NCONTEXT;
