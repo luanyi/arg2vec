@@ -162,10 +162,10 @@ public:
 	i_vector[2] = lookup(cg, p_dep[1], depid);
 	i_x_vector = concatenate(i_vector);
 	v_0_neg = transpose(i_x_vector) * i_wa;
-	// neg_vec.push_back(logistic(-v_0_neg*transpose(v_c)));
 	neg_vec.push_back(log(logistic(-v_0_neg*transpose(v_c))));
       }
-      Expression i_err = -log(logistic(v_c*transpose(v_0))) - (sum(neg_vec)/neg_vec.size());
+      // Expression i_err = -log(logistic(v_c*transpose(v_0))) - (sum(neg_vec)/neg_vec.size());
+      Expression i_err = -log(logistic(v_c*transpose(v_0))) - sum(neg_vec);
       errs.push_back(i_err);
     }
     Expression i_nerr = sum(errs);

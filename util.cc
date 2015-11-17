@@ -71,7 +71,8 @@ int load_unigram(string fname, Unigram unigram){
 Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Pos, Dict* Dep, Dict* Pred, Unigram* unigram, bool update) {
   vector<string> strs;
   boost::split(strs, line, boost::is_any_of("\t"));
-  istringstream in(strs[1]);
+  vector<string > tokens;
+  boost::split(tokens, strs[1], boost::is_any_of(" "));
   string arg, pos, dep, pred, token, arg_pos_dep;
   Sent res;
   Token Stoken, Etoken;
@@ -85,8 +86,7 @@ Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Pos, Dict* Dep, Di
   Etoken.push_back(Pred->Convert("</s>"));
 
   res.push_back(Stoken);
-  while(in) {
-    in >> token;
+  for (auto& token:tokens) {
     if (token.empty()) break;
     vector<string> elems;
     Token cToken;
