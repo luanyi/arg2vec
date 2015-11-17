@@ -1,0 +1,176 @@
+1	Federal|NNP|compound|admit Aviation|NNP|compound|admit Administration|NNP|nmod|admit July|NNP|nmod:tmod|admit report|NNS|dobj|admit turbulence|NN|compound|admit problem|NNS|nmod|admit Boeing|NNP|nmod|admit CD_NUMBER|CD|nummod|admit jetliner|NNS|nsubj|admit Los|NNP|compound|admit Angeles|NNP|compound|admit Times|NNP|appos|admit hundred|NNS|dobj|admit airline|NN|compound|admit crash|NNS|nmod|admit thousand|NNS|conj|admit government|NN|compound|admit document|NNS|nmod|admit U.S.|NNP|compound|admit Freedom|NNP|nmod|admit Information|NNP|compound|admit Act|NNP|nmod|admit
+1	report|NNS|dobj|mishandle turbulence|NN|compound|mishandle problem|NNS|nmod|mishandle Boeing|NNP|nmod|mishandle
+1	Boeing|NNP|nmod|associate
+1	hundred|NNS|dobj|review airline|NN|compound|review crash|NNS|nmod|review thousand|NNS|conj|review government|NN|compound|review document|NNS|nmod|review U.S.|NNP|compound|review Freedom|NNP|nmod|review Information|NNP|compound|review Act|NNP|nmod|review
+1	U.S.|NNP|compound|obtain Freedom|NNP|nmod|obtain Information|NNP|compound|obtain Act|NNP|nmod|obtain
+2	score|NNS|nsubjpass|interview FAA|NNP|compound|interview official|NNS|conj|interview member|NNS|appos|interview Congress|NNP|nmod|interview airline|NN|compound|interview industry|NN|compound|interview source|NNS|conj|interview safety|NN|compound|interview expert|NNS|conj|interview
+3	safety|NN|compound|address problem|NNS|dobj|address
+4	finding|NNS|nmod|compromise FAA|NNP|nmod:poss|compromise performance|NN|nsubjpass|compromise communication|NN|nmod|compromise safety|NN|compound|compromise problem|NNS|dobj|compromise power|NN|nmod|compromise pressure|NN|conj|compromise industry|NN|nmod|compromise
+4	safety|NN|compound|charge problem|NNS|dobj|charge power|NN|nmod|charge
+4	safety|NN|compound|identify problem|NNS|dobj|identify power|NN|nmod|identify
+5	rule|NNS|dobj|want
+5	rule|NNS|dobj|change
+5	time|NN|nmod:tmod|scream manufacturer|NNS|nsubj|scream
+5	CD_NUMBER|CD|dobj|say FAA|NNP|compound|say aircraft|NN|compound|say certification|NN|compound|say official|NN|nsubj|say condition|NN|nmod|say anonymity|NN|nmod|say
+5	condition|NN|nmod|speak anonymity|NN|nmod|speak
+6	money|NN|dobj|cost manufacturer|NNS|nmod|cost
+6	anything|NN|nsubj|have
+8	`Well|NNP|nsubj|be
+9	delay|NNS|nsubj|occur part|NN|nmod|occur law|NN|nsubj|occur FAA|NNP|dobj|occur cost|NN|dobj|occur safety|NN|compound|occur measure|NNS|dobj|occur life|NNS|nsubjpass|occur
+9	law|NN|nsubj|require FAA|NNP|dobj|require cost|NN|dobj|require safety|NN|compound|require measure|NNS|dobj|require life|NNS|nsubjpass|require
+9	cost|NN|dobj|justify safety|NN|compound|justify measure|NNS|dobj|justify life|NNS|nsubjpass|justify
+9	safety|NN|compound|implement measure|NNS|dobj|implement life|NNS|nsubjpass|implement
+9	life|NNS|nsubjpass|show
+9	life|NNS|nsubjpass|save
+10	strangulation|NN|ccomp|observe safety|NN|nmod|observe process|NN|nmod|observe Rep.|NNP|compound|observe James|NNP|compound|observe L.|NNP|compound|observe Oberstar|NNP|nsubj|observe D-Minn.|NNP|appos|observe chairman|NN|appos|observe House|NNP|compound|observe Committee|NNP|nmod|observe Public|NNP|compound|observe Works|NNP|nmod|observe Transportation|NNP|nmod:poss|observe subcommittee|NN|conj|observe aviation|NN|nmod|observe
+11	FAA|NNP|nsubj|fail admonition|NNS|dobj|fail oversight|NN|compound|fail agency|NNS|nmod|fail rank|NNS|conj|fail safety|NN|iobj|fail priority|NN|dobj|fail
+11	admonition|NNS|dobj|heed oversight|NN|compound|heed agency|NNS|nmod|heed rank|NNS|conj|heed safety|NN|iobj|heed priority|NN|dobj|heed
+11	safety|NN|iobj|make priority|NN|dobj|make
+12	FAA|NNP|conj|exist acceptance|NN|appos|exist accident|NNS|nsubj|exist agency|NN|dobj|exist action|NN|dobj|exist
+12	accident|NNS|nsubj|spur agency|NN|dobj|spur action|NN|dobj|spur
+12	action|NN|dobj|take
+===
+1	book|NN|dobj|offer day|NN|nsubj|offer life|NN|nmod|offer music|NN|dep|offer artistry|NN|conj|offer Beatles|NNP|nmod|offer picture|NN|dobj|offer Beatles|NNP|nmod:poss|offer recording|NNS|nsubj|offer
+1	Beatles|NNP|nmod:poss|come recording|NNS|nsubj|come
+2	band|NN|nmod|know people|NNS|nmod|know
+3	book|NN|nmod:npmod|read subject|NN|nmod|read interview|NN|nmod|read CD_DURATION|CD|nummod|read hour|NNS|nmod|read beatle|NNS|nmod|read John|NNP|compound|read Lennon|NNP|compound|read recording|NNS|conj|read EMI|NNP|compound|read archive|NNS|nmod|read Abbey|NNP|compound|read Road|NNP|nmod|read London|NNP|nmod|read
+3	interview|NN|nmod|pore
+3	CD_DURATION|CD|nummod|listen hour|NNS|nmod|listen beatle|NNS|nmod|listen John|NNP|compound|listen Lennon|NNP|compound|listen recording|NNS|conj|listen EMI|NNP|compound|listen archive|NNS|nmod|listen Abbey|NNP|compound|listen Road|NNP|nmod|listen London|NNP|nmod|listen
+4	Beatles|NNP|compound|ask catalog|NN|nmod|ask song|NN|nsubj|ask
+4	song|NN|nsubj|explain
+4	song|NN|nsubj|know
+4	song|NN|nsubj|know
+4	song|NN|nsubj|come
+5	Beatles|NNP|compound|ask fan|NN|nmod|ask
+5	Beatles|NNP|compound|be fan|NN|nmod|be
+5	Beatles|NNP|compound|grow fan|NN|nmod|grow
+6	beatle|NNS|dobj|see `Ed|NNP|compound|see Sullivan|NNP|nmod|see
+6	writer|NN|nsubj|say
+7	college|NN|advcl|get
+9	wave|NN|nmod|sweep Beatlemania|NNP|nmod|sweep
+10	Sullivan|NNP|compound|say show|NN|compound|say broadcast|NN|nmod|say
+12	name|NNS|dobj|have television|NN|nmod|have girl|NNS|nsubj|have stand|NNS|nmod|have
+12	girl|NNS|nsubj|be stand|NNS|nmod|be
+15	fact|NN|nmod|be year|NNS|nmod|be
+15	year|NNS|nmod|write
+16	knee|NN|nmod|examine Press|NNP|dep|examine Reagan|NNP|compound|examine Presidency|NNP|conj|examine way|NN|dobj|examine
+16	book|NN|nsubj|manipulate Reagan|NNP|compound|manipulate administration|NN|compound|manipulate spin|NN|compound|manipulate doctor|NNS|nsubj|manipulate media|NNS|dobj|manipulate '80|NNS|nmod|manipulate
+17	issue|NNS|nmod|write publication|NNS|nmod|write New|NNP|compound|write Yorker|NNP|nmod|write Vanity|NNP|compound|write Fair|NNP|conj|write Le|NNP|compound|write Monde|NNP|conj|write
+18	Beatles|NNP|compound|wind book|NN|dobj|wind
+18	Beatles|NNP|compound|write book|NN|dobj|write
+20	profile|NN|nmod|work Beatles|NNP|compound|work archivist|NN|compound|work Mark|NNP|compound|work Lewisohn|NNP|nmod|work New|NNP|compound|work Yorkerthe|NNP|compound|work assignment|NN|nmod|work day|NN|nmod|work Life|NNP|compound|work Hertsgaard|NNP|nmod|work
+20	day|NN|nmod|lead Life|NNP|compound|lead Hertsgaard|NNP|nmod|lead
+20	idea|NN|nmod|scoff Beatles|NNP|compound|scoff book|NN|dobj|scoff
+20	Beatles|NNP|compound|do book|NN|dobj|do
+21	Lewisohn|NNP|nsubj|keep interview|NNS|dobj|keep book|NN|dobj|keep
+21	interview|NNS|dobj|do
+21	book|NN|dobj|write
+22	`Thank|NNP|xcomp|say piece|NN|nsubj|say
+23	book|NN|dobj|do
+24	)|NN|dobj|realize book|NNS|dobj|realize Beatles|NNP|nmod|realize profile|NN|dobj|realize Mark|NNP|nmod|realize book|NN|nsubj|realize justice|NN|dobj|realize music|NN|nmod|realize
+24	book|NNS|dobj|read Beatles|NNP|nmod|read profile|NN|dobj|read Mark|NNP|nmod|read
+24	profile|NN|dobj|do Mark|NNP|nmod|do
+24	book|NN|nsubj|be justice|NN|dobj|be music|NN|nmod|be
+24	justice|NN|dobj|do music|NN|nmod|do
+26	documentation|NN|nmod|astonish quote|NNS|conj|astonish
+26	documentation|NN|nmod|look quote|NNS|conj|look
+27	(|NNP|compound|add Optional|NNP|nsubj|add end|NN|compound|add )|NN|compound|add part|NN|dobj|add Hertsgaard|NNP|nsubj|add chance|NN|ccomp|add record|NN|dobj|add reporter|NN|nmod|add historian|NN|conj|add `ok|NN|nmod|add CD_DURATION|CD|nummod|add year|NNS|nmod|add
+27	Hertsgaard|NNP|nsubj|get chance|NN|ccomp|get record|NN|dobj|get reporter|NN|nmod|get historian|NN|conj|get
+27	record|NN|dobj|set
+27	reporter|NN|nmod|go historian|NN|conj|go
+30	fact|NN|nmod|spark Lewisohn|NNP|compound|spark profile|NN|nmod|spark Hertsgaard|NNP|nsubjpass|spark access|NN|dobj|spark Beatles|NNPS|nmod|spark archive|NNS|dep|spark hour|NNS|nmod|spark hour|NNS|nmod|spark studio|NN|compound|spark material|NN|nmod|spark one|NN|nsubj|spark Beatles|NNP|nmod:poss|spark circle|NN|nmod|spark
+30	fact|NN|nmod|have Lewisohn|NNP|compound|have profile|NN|nmod|have Hertsgaard|NNP|nsubjpass|have access|NN|dobj|have Beatles|NNPS|nmod|have archive|NNS|dep|have hour|NNS|nmod|have hour|NNS|nmod|have studio|NN|compound|have material|NN|nmod|have one|NN|nsubj|have Beatles|NNP|nmod:poss|have circle|NN|nmod|have
+30	fact|NN|nmod|do Lewisohn|NNP|compound|do profile|NN|nmod|do Hertsgaard|NNP|nsubjpass|do access|NN|dobj|do Beatles|NNPS|nmod|do archive|NNS|dep|do
+30	Lewisohn|NNP|compound|work profile|NN|nmod|work
+30	Hertsgaard|NNP|nsubjpass|grant access|NN|dobj|grant Beatles|NNPS|nmod|grant archive|NNS|dep|grant
+30	hour|NNS|nmod|listen hour|NNS|nmod|listen studio|NN|compound|listen material|NN|nmod|listen one|NN|nsubj|listen Beatles|NNP|nmod:poss|listen circle|NN|nmod|listen
+30	one|NN|nsubj|hear Beatles|NNP|nmod:poss|hear circle|NN|nmod|hear
+31	question|NN|dobj|get day|NN|xcomp|get `oh|NN|nmod:tmod|get trick|NN|acl:relcl|get Abbey|NNP|compound|get Road|NNP|compound|get studio|NNS|nmod|get
+31	Abbey|NNP|compound|get Road|NNP|compound|get studio|NNS|nmod|get
+33	time|NN|nmod|have intention|NN|dobj|have book|NN|dobj|have
+33	book|NN|dobj|do
+34	Mark|NNP|compound|go Lewisohn|NNP|nmod|go
+34	Mark|NNP|compound|write Lewisohn|NNP|nmod|write
+34	person|NN|advcl|be
+35	book|NN|dobj|be book|NN|ccomp|be vault|NNS|acl|be
+35	book|NN|dobj|write
+35	book|NN|ccomp|need vault|NNS|acl|need
+35	book|NN|ccomp|compare vault|NNS|acl|compare
+36	way|NN|nmod|allow
+36	Beatles|NNPS|nsubj|add
+37	EMI|NNP|nmod|decide
+37	Beatles|NNPS|nmod:poss|( label|NN|dobj|( )|NN|compound|( official|NNS|nsubj|(
+38	Lewisohn|NNP|nsubj|have power|NN|dobj|have
+39	archivist|NN|nmod|allow archive|NNS|nmod|allow
+40	stuff|NN|nsubj|be
+40	stuff|NN|nsubj|be
+41	Los|NNP|compound|distribute Angeles|NNP|compound|distribute Times-Washington|NNP|compound|distribute Post|NNP|compound|distribute News|NNP|compound|distribute Service|NNP|nmod|distribute
+===
+1	retrenchment|NN|nmod|preside Metro|NNP|compound|preside Goldwyn|NNP|compound|preside Mayer|NNP|compound|preside film|NN|compound|preside studio|NN|nmod|preside resurgence|NN|conj|preside CBS|NNP|nmod|preside tenure|NNS|nmod|preside creativity|NN|nmod|preside callousness|NN|conj|preside
+1	creativity|NN|nmod|mark callousness|NN|conj|mark
+1	LOS|NNP|compound|die ANGELESJames|NNP|compound|die Thomas|NNP|compound|die Aubrey|NNP|compound|die Jr.|NNP|nsubj|die
+1	Friday|NNP|compound|report night|NN|nmod:tmod|report
+2	son|NN|nsubj|say James|NNP|compound|say W.|NNP|compound|say Aubrey|NNP|appos|say executive|NN|dobj|say Beverly|NNP|compound|say Hillbillies|NNPS|dobj|say Dick|NNP|compound|say Van|NNP|compound|say Dyke|NNP|compound|say Show|NNP|dep|say Green|NNP|compound|say Acres|NNP|nsubj|say show|NNS|conj|say nation|NN|nmod:poss|say living|NN|compound|say room|NNS|nmod|say CD_NUMBER|CD|dep|say
+2	Beverly|NNP|compound|bring Hillbillies|NNPS|dobj|bring Dick|NNP|compound|bring Van|NNP|compound|bring Dyke|NNP|compound|bring Show|NNP|dep|bring Green|NNP|compound|bring Acres|NNP|nsubj|bring show|NNS|conj|bring nation|NN|nmod:poss|bring living|NN|compound|bring room|NNS|nmod|bring CD_NUMBER|CD|dep|bring
+3	film|NN|compound|head studio|NN|dobj|head tv|NN|compound|head networkdied|NN|conj|head heart|NN|compound|head attack|NN|nmod|head Sept.|NNP|nmod:tmod|head
+3	Aubreythe|NNP|compound|3at man|NN|nsubj|3at University|NNP|dobj|3at California|NNP|nmod|3at Los|NNP|compound|3at Angeles|NNP|compound|3at Medical|NNP|compound|3at Center|NNP|appos|3at
+4	Aubrey|NNP|nsubj|say father|NN|nsubj|say paramedic|NNS|dobj|say
+4	father|NN|nsubj|realize paramedic|NNS|dobj|realize
+4	paramedic|NNS|dobj|call
+6	Lucille|NNP|compound|admire Ball|NNP|nsubj|admire CD_NUMBER|CD|nmod|admire CBS|NNP|compound|admire executive|NN|compound|admire suite|NN|compound|admire )|NN|nmod|admire John|NNP|compound|admire Houseman|NNP|nsubj|admire cobra|NN|xcomp|admire
+6	John|NNP|compound|dub Houseman|NNP|nsubj|dub cobra|NN|xcomp|dub
+7	Aubrey|NNP|nsubjpass|bear La|NNP|compound|bear Salle|NNP|nmod|bear Ill.|NNP|appos|bear Princeton|NNP|dobj|bear CD_NUMBER|CD|nummod|bear football|NN|compound|bear )|NN|dobj|bear entertainment|NN|compound|bear industry|NN|dobj|bear CD_DATE|CD|nmod|bear
+7	Princeton|NNP|dobj|attend CD_NUMBER|CD|nummod|attend football|NN|compound|attend )|NN|dobj|attend
+7	football|NN|compound|play )|NN|dobj|play
+7	entertainment|NN|compound|enter industry|NN|dobj|enter CD_DATE|CD|nmod|enter
+9	CD_DATE|CD|nummod|name year|NNS|nmod:npmod|name network|NN|compound|name president|NN|dobj|name
+10	(|NN|compound|prove begin|NN|nsubj|prove )|NN|dep|prove Aubrey|NNP|nmod:poss|prove year|NNS|dep|prove CD_NUMBER|CD|nummod|prove era|NN|advcl|prove president|NN|acl:relcl|prove CBS|NNP|nmod|prove spot|NN|dobj|prove MGM|NNP|nmod|prove CD_DATE|CD|nummod|prove CD_DATE|CD|nmod|prove
+10	spot|NN|dobj|take MGM|NNP|nmod|take CD_DATE|CD|nummod|take CD_DATE|CD|nmod|take
+11	CD_NUMBER|CD|nummod|respect period|NNS|nmod|respect
+11	CD_NUMBER|CD|nummod|dislike period|NNS|nmod|dislike
+12	reality|NN|nsubj|be tenure|NNS|nmod|be CD_DATE|CD|nmod|be tutelage|NN|nmod|be CBS|NNP|nsubj|be CD_NUMBER|CD|dobj|be CD_NUMBER|CD|nummod|be series|NN|nmod|be air|NN|nmod|be CD_NUMBER|CD|conj|be soap|NNS|nmod|be
+12	CD_DATE|CD|nmod|have tutelage|NN|nmod|have CBS|NNP|nsubj|have CD_NUMBER|CD|dobj|have CD_NUMBER|CD|nummod|have series|NN|nmod|have air|NN|nmod|have CD_NUMBER|CD|conj|have soap|NNS|nmod|have
+13	MGM|NNP|nsubj|credit
+13	MGM|NNP|nsubj|save
+13	MGM|NNP|nsubj|ruin
+14	man|NN|nsubj|make tv|NN|compound|make history|NN|nmod|make profitsor|NN|dobj|make enemy|NNS|nmod|make
+14	Washington|NNP|compound|write Post|NNP|nsubj|write
+15	CBS|NNP|compound|fire chief|NN|compound|fire William|NNP|compound|fire S.|NNP|compound|fire Paley|NNP|nmod|fire dispute|NN|dobj|fire manner|NN|nmod|fire subordinate|NNS|nmod|fire dip|NN|advcl|fire rating|NNS|nmod|fire CD_NUMBER|CD|nummod|fire Aubrey|NNP|compound|fire project|NNS|nmod|fire
+15	dispute|NN|dobj|prove manner|NN|nmod|prove subordinate|NNS|nmod|prove dip|NN|advcl|prove rating|NNS|nmod|prove CD_NUMBER|CD|nummod|prove Aubrey|NNP|compound|prove project|NNS|nmod|prove
+15	CD_NUMBER|CD|nummod|bring Aubrey|NNP|compound|bring project|NNS|nmod|bring
+15	CBS|NNP|compound|drop stock|NN|nsubj|drop CD_NUMBER|CD|nummod|drop point|NNS|dobj|drop
+16	dozen|NNS|dobj|bring success|NNS|nmod|bring screen|NN|nmod|bring Petticoat|NNP|compound|bring Junction|NNP|nmod|bring Munsters|NNPS|conj|bring Gilligan|NNP|nmod:poss|bring island|NN|conj|bring Beverly|NNP|compound|bring Hillbillies|NNPS|nmod|bring Van|NNP|compound|bring Dyke|NNP|compound|bring series|NN|conj|bring
+16	series|NN|dobj|cancel legend|NNS|nmod|cancel Jack|NNP|compound|cancel Benny|NNP|compound|cancel GarryMoore|NNP|conj|cancel Arthur|NNP|conj|cancel Godfrey|NNP|nmod|cancel
+17	Aubrey|NNP|nsubjpass|ask UCLA|NNP|compound|ask film|NN|compound|ask class|NN|nmod|ask CD_NUMBER|CD|nummod|ask series|NN|dobj|ask air|NN|nmod|ask season|NN|nmod|ask pilot|NN|dobj|ask
+17	CD_NUMBER|CD|nummod|put series|NN|dobj|put air|NN|nmod|put season|NN|nmod|put pilot|NN|dobj|put
+17	pilot|NN|dobj|make
+18	arrogance|NN|nsubj|guess
+18	man|NN|nsubj|reply National|NNP|compound|reply Football|NNP|compound|reply League|NNP|dobj|reply CBS|NNP|nmod|reply time|NN|dep|reply bid|NN|nmod|reply CD_MONEY|CD|compound|reply CD_MONEY|CD|nummod|reply MGM|NNP|nmod|reply studio|NN|nmod|reply film|NN|compound|reply industry|NN|nmod|reply
+18	National|NNP|compound|bring Football|NNP|compound|bring League|NNP|dobj|bring CBS|NNP|nmod|bring time|NN|dep|bring bid|NN|nmod|bring CD_MONEY|CD|compound|bring CD_MONEY|CD|nummod|bring MGM|NNP|nmod|bring studio|NN|nmod|bring film|NN|compound|bring industry|NN|nmod|bring
+18	MGM|NNP|nmod|hire studio|NN|nmod|hire film|NN|compound|hire industry|NN|nmod|hire
+20	owner|NN|compound|sell Kirk|NNP|compound|sell Kerkorian|NNP|conj|sell land|NN|dobj|sell prop|NNS|appos|sell salary|NNS|dobj|sell heat|NN|dobj|sell office|NN|compound|sell building|NNS|nmod|sell Judy|NNP|compound|sell Garland|NNP|nmod:poss|sell slipper|NNS|dobj|sell Wizard|NNP|nmod|sell Oz|NNP|nmod|sell CD_NUMBER|CD|nummod|sell employee|NNS|dobj|sell
+20	salary|NNS|dobj|cut
+20	heat|NN|dobj|turn office|NN|compound|turn building|NNS|nmod|turn
+20	Judy|NNP|compound|sell Garland|NNP|nmod:poss|sell slipper|NNS|dobj|sell Wizard|NNP|nmod|sell Oz|NNP|nmod|sell
+20	CD_NUMBER|CD|nummod|fire employee|NNS|dobj|fire
+21	Aubrey|NNP|nsubj|cancel film|NNS|dobj|cancel day|NNS|acl:relcl|cancel production|NN|nmod|cancel MGM|NNP|compound|cancel picture|NN|compound|cancel henceforth|NN|nsubj|cancel CD_MONEY|CD|compound|cancel CD_MONEY|CD|nummod|cancel
+21	MGM|NNP|compound|decree picture|NN|compound|decree henceforth|NN|nsubj|decree CD_MONEY|CD|compound|decree CD_MONEY|CD|nummod|decree
+21	MGM|NNP|compound|cost picture|NN|compound|cost henceforth|NN|nsubj|cost CD_MONEY|CD|compound|cost CD_MONEY|CD|nummod|cost
+22	result|NN|nsubj|reduce CD_MONEY|CD|compound|reduce CD_MONEY|CD|nummod|reduce bank|NN|compound|reduce debt|NN|dobj|reduce CD_MONEY|CD|compound|reduce CD_MONEY|CD|nummod|reduce
+23	Aubrey|NNP|nsubj|leave CD_DATE|CD|nmod|leave
+24	(|NN|compound|say end|NN|dep|say )|NN|dep|say Aubrey|NNP|nsubj|say life|NN|nmod|say top|NN|nmod|say CD_DATE|CD|nmod|say
+24	life|NN|nmod|walk top|NN|nmod|walk CD_DATE|CD|nmod|walk
+25	candor|NN|nmod|admit people|NNS|dobj|admit honesty|NN|nmod|admit power|NN|dobj|admit authority|NN|conj|admit
+25	candor|NN|nmod|operate
+25	people|NNS|dobj|realize honesty|NN|nmod|realize power|NN|dobj|realize authority|NN|conj|realize
+25	people|NNS|dobj|hurt honesty|NN|nmod|hurt power|NN|dobj|hurt authority|NN|conj|hurt
+25	power|NN|dobj|want
+26	movie|NNS|nsubj|say tv|NN|nmod|say
+26	movie|NNS|nsubj|discover tv|NN|nmod|discover
+27	picture|NN|nsubjpass|suppose smash|NN|xcomp|suppose executive|NN|nsubj|suppose heavy|NN|xcomp|suppose
+27	executive|NN|nsubj|become heavy|NN|xcomp|become
+28	entertainment|NN|compound|stay executive|NN|compound|stay suite|NNS|nmod|stay dozen|NN|nummod|stay year|NNS|nmod|stay film|NN|compound|stay production|NN|compound|stay company|NN|dobj|stay Entermark|NNP|appos|stay
+28	film|NN|compound|return production|NN|compound|return company|NN|dobj|return Entermark|NNP|appos|return
+28	film|NN|compound|start production|NN|compound|start company|NN|dobj|start Entermark|NNP|appos|start
+29	addition|NN|nmod|survive son|NN|nmod|survive daughter|NN|nmod|survive Skye|NNP|appos|survive
+===
