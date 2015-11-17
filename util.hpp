@@ -151,7 +151,7 @@ int load_unigram(string fname, Unigram unigram);
 // read sentences and convect tokens to indices
 // *******************************************************
 Sent MyReadSentence(const std::string& line,
-                    Dict* Arg, Dict* Pos, Dict* Dep, Dict* Pred,
+                    Dict* Arg, Dict* Dep, Dict* Pred,
                     bool update);
 
 // *****************************************************
@@ -162,7 +162,7 @@ Doc makeDoc();
 // *****************************************************
 // read training and dev data
 // *****************************************************
-Corpus readData(char* filename, Dict* arg, Dict* pos, Dict* dep, Dict* pred, Unigram* unigram, bool b_update = true);
+Corpus readData(char* filename, Dict* arg, Dict* dep, Dict* pred, Unigram* unigram, bool b_update = true);
 
 
 // ******************************************************

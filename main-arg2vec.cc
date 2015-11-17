@@ -28,7 +28,6 @@ int main(int argc, char** argv) {
     char* fdev = argv[3];
     string flag = string(argv[4]);
     unsigned argdim = 50;
-    unsigned posdim = 20;
     unsigned depdim = 30;
     unsigned hidden = 50;
     unsigned preddim = 80;
@@ -44,13 +43,12 @@ int main(int argc, char** argv) {
     if (argc >= 8) report_every_i = atoi(argv[7]);
     if (argc >= 9) nneg = atoi(argv[8]);
     if (argc >= 10) argdim = atoi(argv[9]);
-    if (argc >= 11) posdim = atoi(argv[10]);
-    if (argc >= 12) depdim = atoi(argv[11]);
-    if (argc >= 13) preddim = atoi(argv[12]);
-    if (argc >= 14) lr0 = atof(argv[13]);
-    if (argc >= 15) use_adagrad = atoi(argv[14]);
-    if (argc >= 16) fmodel = string(argv[15]);
-    train(ftrn, fdev, argdim, posdim, depdim, preddim, hidden, NCONTEXT, nneg, report_every_i, flag, lr0, use_adagrad, path, fmodel);
+    if (argc >= 11) depdim = atoi(argv[10]);
+    if (argc >= 12) preddim = atoi(argv[11]);
+    if (argc >= 13) lr0 = atof(argv[12]);
+    if (argc >= 14) use_adagrad = atoi(argv[13]);
+    if (argc >= 15) fmodel = string(argv[14]);
+    train(ftrn, fdev, argdim, depdim, preddim, hidden, NCONTEXT, nneg, report_every_i, flag, lr0, use_adagrad, path, fmodel);
   }
   else{
     cerr << "Unrecognized command " << argv[1]<<endl;

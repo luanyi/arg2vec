@@ -68,20 +68,18 @@ int load_unigram(string fname, Unigram unigram){
 // *******************************************************
 // read sentences and convect tokens to indices
 // *******************************************************
-Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Pos, Dict* Dep, Dict* Pred, Unigram* unigram, bool update) {
+Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Dep, Dict* Pred, Unigram* unigram, bool update) {
   vector<string> strs;
   boost::split(strs, line, boost::is_any_of("\t"));
   vector<string > tokens;
   boost::split(tokens, strs[1], boost::is_any_of(" "));
-  string arg, pos, dep, pred, token, arg_pos_dep;
+  string arg, dep, pred, token, arg_dep;
   Sent res;
   Token Stoken, Etoken;
   Stoken.push_back(Arg->Convert("<s>"));
-  Stoken.push_back(Pos->Convert("<s>"));
   Stoken.push_back(Dep->Convert("<s>"));
   Stoken.push_back(Pred->Convert("<s>"));
   Etoken.push_back(Arg->Convert("</s>"));
-  Etoken.push_back(Pos->Convert("</s>"));
   Etoken.push_back(Dep->Convert("</s>"));
   Etoken.push_back(Pred->Convert("</s>"));
 
@@ -92,30 +90,22 @@ Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Pos, Dict* Dep, Di
     Token cToken;
     boost::split(elems, token, boost::is_any_of("|"));
     arg = elems[0];
-    pos = elems[1];
     dep = elems[2];
     pred = elems[3];
     if (update){
       int argid = (Arg->Convert(arg));
-      int posid = (Pos->Convert(pos));
       int depid = (Dep->Convert(dep));
       cToken.push_back(argid);
-      cToken.push_back(posid);
       cToken.push_back(depid);
       cToken.push_back(Pred->Convert(pred));
-      arg_pos_dep = to_string(argid) + '_' + to_string(posid) + '_' + to_string(depid);
-      unigram->Convert(arg_pos_dep);
+      arg_dep = to_string(argid) + '_' + to_string(depid);
+      unigram->Convert(arg_dep);
       res.push_back(cToken);
     } else {
       if (Arg->Contains(arg)){
 	cToken.push_back(Arg->Convert(arg));
       }else{
 	cToken.push_back(Arg->Convert("UNK"));
-      }
-      if (Pos->Contains(pos)){
-        cToken.push_back(Pos->Convert(pos));
-      }else{
-        cToken.push_back(Pos->Convert("UNK"));
       }
       if (Dep->Contains(dep)){
         cToken.push_back(Dep->Convert(dep));
@@ -140,7 +130,6 @@ Sent MyReadSentence(const std::string& line, Dict* Arg, Dict* Pos, Dict* Dep, Di
 // *****************************************************
 Corpus readData(char* filename, 
 		Dict* arg,
-		Dict* pos,
 		Dict* dep,
 		Dict* pred,
 		Unigram* unigram,
@@ -156,7 +145,7 @@ Corpus readData(char* filename,
   while(getline(in, line)){
     ++tlc;
     if (line[0] != '='){
-      sent = MyReadSentence(line, arg, pos, dep, pred, unigram, b_update);
+      sent = MyReadSentence(line, arg, dep, pred, unigram, b_update);
       if (sent.size() > 0){
 	doc.push_back(sent);
 	toks += doc.back().size();
@@ -176,7 +165,7 @@ Corpus readData(char* filename,
     corpus.push_back(doc);
   }
   cerr << corpus.size() << " docs, " << tlc << " lines, " 
-       << toks << " tokens, " << arg->size() << " arg types, " << pos->size() << " pos types," << dep->size() << " dependency types, " << pred->size() << " predicate types, " << unigram->size() << " arg-pos-dep types. " <<endl;
+       << toks << " tokens, " << arg->size() << " arg types, " << dep->size() << " dependency types, " << pred->size() << " predicate types, " << unigram->size() << " arg-dep types. " <<endl;
   return(corpus);
 }
 

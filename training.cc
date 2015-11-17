@@ -12,14 +12,13 @@ extern unsigned NCONV;
 // ********************************************************
 // train
 // ********************************************************
-int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned depsize, unsigned predsize, unsigned hidden, unsigned NCONTEXT, unsigned nneg, unsigned report_every_i, string flag, float lr0, bool use_adagrad, string logpath, string fmodel){
+int train(char* ftrn, char* fdev, unsigned argsize, unsigned depsize, unsigned predsize, unsigned hidden, unsigned NCONTEXT, unsigned nneg, unsigned report_every_i, string flag, float lr0, bool use_adagrad, string logpath, string fmodel){
   // initialize logging
   int argc = 1; 
   char** argv = new char* [1];
   START_EASYLOGGINGPP(argc, argv);
   delete[] argv;
   Dict Arg;
-  Dict Pos;
   Dict Dep;
   Dict Pred;
   Unigram unigram;
@@ -29,13 +28,13 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
   // ---------------------------------------------
   // predefined files
   ostringstream os;
-  os << flag << '_' << argsize << '_' << possize << '_' << depsize
+  os << flag << '_' << argsize << '_' << depsize
      << '_' << predsize << '_' << hidden << '_' << nneg << '_' << lr0 << '_' << use_adagrad
      << "-pid" << getpid();
   const string fprefix = os.str();
   string fname = MODELPATH + fprefix;
   string flog = LOGPATH + fprefix + ".log";
-  int nneg_dev = nneg;
+  int nneg_dev = nneg*nneg;
   // int nneg_dev = nneg;
   cout << nneg_dev << endl;
   boost::filesystem::path dir(LOGPATH);
@@ -79,49 +78,42 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
   if (fmodel.size() == 0){
     LOG(INFO) << "Create dict from training data ...";
     // read training data
-    training = readData(ftrn, &Arg, &Pos, &Dep, &Pred, &unigram, true);
+    training = readData(ftrn, &Arg, &Dep, &Pred, &unigram, true);
     // no new word types allowed
     Arg.Freeze();
-    Pos.Freeze();
     Dep.Freeze();
     Pred.Freeze();
     unigram.Freeze();
     unigram.Normalize();
     // reading dev data
-    dev = readData(fdev, &Arg, &Pos, &Dep, &Pred, &unigram, false);
+    dev = readData(fdev, &Arg, &Dep, &Pred, &unigram, false);
   } else {
     LOG(INFO) << "Load dict from pre-trained model: " << fmodel;
     ifstream in_arg(fmodel + "_arg.dict");
-    ifstream in_pos(fmodel + "_pos.dict");
     ifstream in_dep(fmodel + "_dep.dict");
     ifstream in_pred(fmodel + "_pred.dict");
     ifstream in_unigram(fmodel + ".unigram");
     boost::archive::text_iarchive ia(in_arg);
     ia >> Arg; Arg.Freeze(); 
-    boost::archive::text_iarchive ip(in_pos);
-    ip >> Pos; Pos.Freeze(); 
     boost::archive::text_iarchive id(in_dep);
     id >> Dep; Dep.Freeze(); 
     boost::archive::text_iarchive ipr(in_pred);
     ipr >> Pred; Pred.Freeze(); 
     boost::archive::text_iarchive iu(in_unigram);
     iu >> unigram; unigram.Freeze(); 
-    training = readData(ftrn, &Arg, &Pos, &Dep, &Pred, &unigram, false);
-    dev = readData(fdev, &Arg, &Pos, &Dep, &Pred, &unigram, false);
+    training = readData(ftrn, &Arg, &Dep, &Pred, &unigram, false);
+    dev = readData(fdev, &Arg, &Dep, &Pred, &unigram, false);
   }
   // get dict size
   unsigned argvsize = Arg.size();
-  unsigned posvsize = Pos.size();
   unsigned depvsize = Dep.size();
   unsigned predvsize = Pred.size();
   LOG(INFO) << "Arg size = " << argvsize;
-  LOG(INFO) << "Pos size = " << posvsize;
   LOG(INFO) << "Dep size = " << depvsize;
   LOG(INFO) << "Pred size = " << predvsize;
   LOG(INFO) << "Hidden size = " << hidden;
   // save dict
   save_dict(fname + "_arg", Arg);
-  save_dict(fname + "_pos", Pos);
   save_dict(fname + "_dep", Dep);
   save_dict(fname + "_pred", Pred);
   save_unigram(fname, unigram);
@@ -134,7 +126,7 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
   cerr << "sgd" << endl;
   Model model;
   cerr << "model" << endl;
-  Arg2vec lm(model, argvsize, posvsize, depvsize, predvsize, argsize, possize, depsize, predsize, hidden, NCONTEXT);
+  Arg2vec lm(model, argvsize, depvsize, predvsize, argsize, depsize, predsize, hidden, NCONTEXT);
   // Load model
   if (fmodel.size() > 0){
     LOG(INFO) << "Load model from: " << fmodel;
@@ -175,14 +167,15 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
       for (auto& sent : conv) wordl += (sent.size() - NCONTEXT);
       // get the right model
       // lm.BuildGraph(conv, unigram, nneg,cg);
+      ComputationGraph cg;
       for (unsigned j=0; j<conv.size(); j++) {
-	ComputationGraph cg;
 	Sent sent = conv[j];
-	lm.BuildGraphSent(sent, unigram, nneg_dev, cg);
+	lm.BuildGraphSent(sent, unigram, nneg, cg);
 	// lm.BuildGraph(sent, unigram, cg);
 	loss += as_scalar(cg.forward());
 	cg.backward();
 	sgd->update();
+	cg.clear();
       }
       // for (unsigned l=0; l<conv.size(); l++) {
       // 	ComputationGraph cg;
@@ -207,6 +200,10 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
     
     // ----------------------------------------
     report++;
+    int num = 30000;
+    vector<double> p_vec;
+    for (int i=0;i<num;i++) {p_vec.push_back(rand01());}
+
     if (report % dev_every_i_reports == 0) {
       double dloss = 0;
       int dwords = 0, docctr = 0;
@@ -215,15 +212,20 @@ int train(char* ftrn, char* fdev, unsigned argsize, unsigned possize, unsigned d
       // 	dev.push_back(training[training.size()-i])
       // }
       unsigned devl = dev.size();
+      int j = 0;
       for (unsigned i=0; i<devl; i++) {
 	// for each doc
 	auto& conv = dev[i];
 	for (unsigned m = 0; m < conv.size(); m++){
+	  if (j > p_vec.size()-1){
+	    j = 0;
+	  }
 	  ComputationGraph cg;
 	  Sent sent = conv[m];
-	  // lm.BuildGraphSent(sent, unigram, nneg, cg);
-	  lm.BuildGraph(sent, unigram, cg);
+	  lm.BuildGraphSentp(sent, unigram, nneg_dev, cg, p_vec, j);
+	  // lm.BuildGraph(sent, unigram, cg);
 	  dloss += as_scalar(cg.forward());
+	  j = j + sent.size()*nneg_dev;
 	}
 	for (auto& sent : conv) dwords += sent.size() - NCONTEXT;
       }
